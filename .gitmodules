@@ -1,0 +1,9 @@
+[submodule "modules/geest"]
+	path = modules/geest
+	url = git@github.com:lestrrat/p5-Geest.git
+[submodule "modules/kage"]
+	path = modules/kage
+	url = git@github.com:cookpad/kage.git
+[submodule "modules/delta"]
+	path = modules/delta
+	url = git@github.com:kentaro/delta.git
