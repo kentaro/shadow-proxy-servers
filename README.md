@@ -1,5 +1,41 @@
 # Benchmark of Shadow Proxy Servers
 
+## Setup
+
+Just execute `setup.sh` as below:
+
+```
+$ ./setup.sh
+```
+
+It builds httpd for `ab` command that is used later and run `bundle install`, `carton install`, and `gom install` to install dependencies for each servers.
+
+## Targets
+
+This repository includes several shadow server implementation written in the languages below:
+
+  * Perl: [Geest](https://github.com/lestrrat/p5-Geest)
+  * Ruby: [Kage](https://github.com/cookpad/kage)
+  * Go: [Delta](https://github.com/kentaro/delta)
+
+You can run one of above as below:
+
+```
+$ bundle exec forman start {perl,ruby,go}
+```
+
+It starts a shadow proxy server (port 8080) and nginx (port 8081 and 8082). If you dispatch a request to http://127.0.0.1:8080/, the request will be copied and dispatched to both of the ports on which nginx is listening.
+
+## Benchmark
+
+I did benchmarking with the `ab` built from source instead of `/usr/sbin/ab` that was bundled with Mac OS X. For details, refer to the post below:
+
+  * http://adventuresincoding.com/2012/05/how-to-get-apachebenchab-to-work-on-mac-os-x-lion
+
+```
+$ httpd-2.4.7/support/ab -n 1000 -c 100 http://127.0.0.1:8080/
+```
+
 ## Benchmark Environment
 
 ### Hardware
@@ -54,4 +90,13 @@ ruby 2.0.0p353 (2013-11-22 revision 43784) [x86_64-darwin13.0.0]
 ```
 $ go version
 go version go1.2 darwin/amd64
+```
+
+## Trouble Shooting
+
+If you have a problem with building httpd on Mavericks, try below:
+
+```
+cd /Applications/Xcode.app/Contents/Developer/Toolchains/
+sudo ln -s XcodeDefault.xctoolchain OSX10.9.xctoolchain
 ```

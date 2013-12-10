@@ -2,3 +2,5 @@
 /vendor
 /local
 /delta
+/httpd*
+/logs/*_log
