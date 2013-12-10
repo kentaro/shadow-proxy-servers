@@ -3,3 +3,6 @@ perl: nginx -p . -c nginx.conf
 
 ruby: bundle exec ruby kage.rb
 ruby: nginx -p . -c nginx.conf
+
+go: ./delta
+go: nginx -p . -c nginx.conf
