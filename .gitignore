@@ -3,4 +3,4 @@
 /local
 /delta
 /httpd*
-/logs/*_log
+/logs/*log
