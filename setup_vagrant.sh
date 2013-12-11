@@ -1,5 +1,7 @@
 #!/bin/sh
 
+yum -y install nginx
+
 # for ruby
 yum -y install bison zlib-devel openssl-devel
 # for ab command
