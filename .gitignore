@@ -4,3 +4,4 @@
 /delta
 /httpd*
 /logs/*log
+/.vagrant
