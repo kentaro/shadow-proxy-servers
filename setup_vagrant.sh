@@ -33,3 +33,8 @@ if [ ! -e /usr/local/go ]; then
   curl https://go.googlecode.com/files/go1.2.linux-amd64.tar.gz -o /usr/local/src/go1.2.linux-amd64.tar.gz
   tar -C /usr/local -xzf /usr/local/src/go1.2.linux-amd64.tar.gz
 fi
+
+chmod -R 777 /var/cache/nginx
+chmod -R 777 /var/log/nginx
+chmod -R 777 /var/run
+

@@ -2,6 +2,7 @@
 /vendor
 /local
 /delta
-/httpd*
 /logs/*log
 /.vagrant
+/tmp
+/httpd*
