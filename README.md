@@ -21,7 +21,7 @@ This repository includes several shadow server implementation written in the lan
 You can run one of above as below:
 
 ```
-$ bundle exec forman start {perl,ruby,go}
+$ bundle exec foreman start {perl,ruby,go}
 ```
 
 It starts a shadow proxy server (port 8080) and nginx (port 8081 and 8082). If you dispatch a request to http://127.0.0.1:8080/, the request will be copied and dispatched to both of the ports on which nginx is listening.
